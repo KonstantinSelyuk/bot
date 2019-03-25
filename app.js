@@ -1,3 +1,5 @@
+var needle = require("needle");
+var cheerio = require("cheerio");
 const parseModule = require("./parse");
 
 var urlUSD = "https://finance.i.ua/market/kiev/usd/?type=1";
