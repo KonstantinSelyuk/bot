@@ -1,5 +1,5 @@
-var needle = require("needle");
-var cheerio = require("cheerio");
+const needle = require("needle");
+const cheerio = require("cheerio");
 
 var parseSite = function(url, bot, id, currency) {
   needle.get(url, function(err, res) {

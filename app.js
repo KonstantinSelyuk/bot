@@ -1,6 +1,6 @@
-var needle = require("needle");
-var cheerio = require("cheerio");
 const parseModule = require("./parse");
+const needle = require("needle");
+const cheerio = require("cheerio");
 
 var urlUSD = "https://finance.i.ua/market/kiev/usd/?type=1";
 var urlEUR = "https://finance.i.ua/market/kiev/eur/?type=1";
