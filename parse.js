@@ -12,16 +12,14 @@ var parseSite = function(url, bot, id, currency) {
       if (!isExpired && $(cell).attr("data-amount")) {
         var count = $(cell).attr("data-amount");
         var ratio = $(cell).attr("data-ratio");
-        var time = $(cell)
-          .find("time")
-          .text()
-          .trim();
-        var v = "🕒" + time + "  💱" + ratio + "  💰" + count.slice(0, -2);
+        var time = $(cell).find("time").text().trim();
+        var v = "🕒" + time + "  💱" + (ratio * 1).toFixed(2) + "  💰" + count.slice(0, -2);
         result.push(v);
-        result.sort;
-        result = result.slice(0, 10);
       }
     });
+
+    result.sort;
+    result.slice(0, 10);
 
     function valute(val) {
       switch (val) {
@@ -43,17 +41,11 @@ var parseSite = function(url, bot, id, currency) {
 
     if (currency.length === 4) {
       var resultString =
-        "Курс продажи 🇺🇦 ➜ " +
-        valute(currency.slice(0, -1)) +
-        "\n\n" +
-        result.join("\n");
+        "Курс продажи 🇺🇦 ➜ " + valute(currency.slice(0, -1)) +
+        "\n\n" + result.join("\n");
     } else {
-      var resultString =
-        "Курс покупки " +
-        valute(currency) +
-        " ➜ 🇺🇦" +
-        "\n\n" +
-        result.join("\n");
+      var resultString = "Курс покупки " + valute(currency) +" ➜ 🇺🇦" +
+        "\n\n" + result.join("\n");
     }
     if (result.length === 0) {
       resultString = "Сейчас нет данных для: " + currency;
