@@ -40,8 +40,6 @@ var parseSite = function(url, bot, id, currency) {
       var resultString =
         "Курс продажи 🇺🇦 ➜ " + valute(currency.slice(0, -1)) +
         "\n\n" + result.join("\n");
-        console.log(valute(currency.slice(0, -1)));
-        console.log(currency.slice(0, -1));
     } else {
       var resultString = "Курс покупки " + valute(currency) +" ➜ 🇺🇦" +
         "\n\n" + result.join("\n");
