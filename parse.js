@@ -19,7 +19,7 @@ var parseSite = function(url, bot, id, currency) {
     });
 
     result.sort;
-    result.slice(0, 10);
+    var result = result.slice(0, 10);
 
     function valute(val) {
       switch (val) {

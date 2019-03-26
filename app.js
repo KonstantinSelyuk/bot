@@ -10,7 +10,7 @@ var urlEURb = "https://finance.i.ua/market/kiev/eur/?type=2";
 var urlRUBb = "https://finance.i.ua/market/kiev/rub/?type=2";
 
 const TelegramBot = require("node-telegram-bot-api");
-const token = "";
+const token = "778380485:AAG2l0PSSdWpeXKWJ2rrppcEVU9Fp5BslQc";
 const bot = new TelegramBot(token, { polling: true });
 
 bot.onText(/\/curse/, (msg, match) => {
